@@ -5,6 +5,7 @@
     "scripts": {
         "build": "vp build",
         "build:ssr": "vp build && vp build --ssr",
+        "build:landing": "vite build --config vite.landing.config.ts",
         "dev": "vp dev",
         "check": "vp check",
         "check:fix": "vp check --fix",
