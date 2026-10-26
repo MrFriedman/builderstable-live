@@ -1,0 +1,28 @@
+# The Vercel build compiles only the static landing page (see vercel.json and
+# vite.landing.config.ts), so none of the Laravel application is needed there.
+# `mock` matters especially: it is a symlink to a directory outside the
+# repository, and uploading it would fail.
+#
+# `resources/` and `public/` are deliberately kept — the landing build compiles
+# components out of resources/js, scans resources/views for Tailwind classes,
+# and copies the favicons out of public/.
+/app
+/artisan
+/bootstrap
+/compose.yaml
+/composer.json
+/composer.lock
+/config
+/database
+/docs
+/draft.yaml
+/mock
+/phpstan.neon
+/phpunit.xml
+/pint.json
+/public/build
+/routes
+/slides
+/storage
+/testing
+/tests

@@ -1,0 +1,17 @@
+/**
+ * Stylesheet entry for the static landing build.
+ *
+ * Tailwind v4 discovers which utilities to emit by scanning outward from the
+ * Vite project root, and this build sets that root to `landing/` so the dev
+ * server can serve `index.html` directly. That puts the components actually
+ * carrying the class names — everything under `resources/js/` — outside the
+ * scan, so every utility gets treated as unused and dropped, leaving a page
+ * with nothing but preflight. Naming the directory explicitly puts them back.
+ *
+ * Scoped at `resources/js` rather than the handful of landing subdirectories
+ * so that pulling another shared component into the page can't silently strip
+ * its styles.
+ */
+@import '../resources/css/app.css';
+
+@source '../resources/js';

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Itinerary management for crews - TellMe</title>
+        <meta
+            name="description"
+            content="One schedule change. Every traveler notified. TellMe is itinerary management for production and travel coordinators running a crew across a multi-day, multi-city shoot."
+        />
+
+        <!-- Mirrors the inline script in resources/views/app.blade.php. The
+             real app can read a stored appearance preference server-side and
+             render the class immediately; the static build has no session, so
+             it follows the system preference only. Inline and before the
+             stylesheet so there's no light-mode flash. -->
+        <script>
+            (function () {
+                if (
+                    window.matchMedia('(prefers-color-scheme: dark)').matches
+                ) {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+        </script>
+
+        <style>
+            html {
+                background-color: oklch(1 0 0);
+            }
+
+            html.dark {
+                background-color: oklch(0.145 0 0);
+            }
+
+            /* Every CTA on this page is an in-page jump to #demo, so the whole
+               document scrolls smoothly rather than cutting. */
+            @media (prefers-reduced-motion: no-preference) {
+                html {
+                    scroll-behavior: smooth;
+                }
+            }
+        </style>
+
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        <!-- The app serves Instrument Sans through laravel-vite-plugin's @fonts
+             directive, which needs a Blade runtime. Same Bunny family and
+             weights, requested directly. -->
+        <link rel="preconnect" href="https://fonts.bunny.net" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
+        />
+    </head>
+    <body class="font-sans antialiased">
+        <div id="app"></div>
+        <script type="module" src="/main.tsx"></script>
+    </body>
+</html>

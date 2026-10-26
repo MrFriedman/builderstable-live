@@ -1,5 +1,6 @@
 /.phpunit.cache
 /bootstrap/ssr
+/dist-landing
 /node_modules
 /public/build
 /public/fonts-manifest.dev.json
@@ -43,3 +44,4 @@ yarn-error.log
 /boost.json
 /opencode.json
 /opencode.jsonc
+.vercel
